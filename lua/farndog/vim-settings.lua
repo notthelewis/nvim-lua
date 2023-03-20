@@ -2,7 +2,7 @@
 vim.o.autoindent = true;
 vim.o.scrolloff = 8;
 vim.o.updatetime = 300;
-vim.nowrap = true;
+vim.wo.wrap = false;
 
 -- Search settings
 vim.o.hlsearch = false;
@@ -22,5 +22,4 @@ vim.wo.relativenumber = true;
 vim.wo.colorcolumn = '120'
 
 
---vim.cmd([[hi ColorColumn guibg=#272727]])
 vim.cmd([[hi ColorColumn guibg=#4F4946]]);
