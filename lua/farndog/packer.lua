@@ -48,4 +48,8 @@ return require('packer').startup(function(use)
     use('neovim/nvim-lspconfig')
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
+
+    -- Syntax highlighting for cassandra
+    use('elubow/cql-vim')
+
 end)
