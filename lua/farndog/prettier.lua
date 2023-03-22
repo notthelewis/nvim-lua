@@ -6,6 +6,7 @@ prettier.setup({
     "css",
     "graphql",
     "html",
+    "lua",
     "javascript",
     "javascriptreact",
     "json",
@@ -16,6 +17,16 @@ prettier.setup({
     "typescriptreact",
     "yaml",
   },
+  ['null-ls'] = {
+      condition = function() 
+          return prettier.config_exists({
+              -- If 'false', skips checking config.json
+              check_package_json = true
+          })
+      end,
+      timeout = 5000
+  },
+  config_precedence = 'prefer-file',
   cli_options = {
     arrowParens = "avoid",
     bracketSpacing = true,
