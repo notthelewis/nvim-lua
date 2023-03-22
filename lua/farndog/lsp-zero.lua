@@ -22,7 +22,8 @@ lsp.setup_nvim_cmp({
 
 
 lsp.on_attach(function(client, bufnr)
-	local opts = { buffer = bufnr, remap = false };
+--	local opts = { buffer = bufnr, remap = false };
+	local opts = { buffer = bufnr };
 
 	-- code, go to definitions
 	vim.keymap.set('n', '<leader>cgd', function() vim.lsp.buf.definition() end, opts);
@@ -35,10 +36,10 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, opts);
 
 	-- code rename symbol
-    vim.keymap.set('n', '<leadern>crn', '<cmd> lua vim.lsp.buf.rename()<cr>', opts);
+    vim.keymap.set('n', '<leader>crn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 
     -- code show errors
-    vim.keymap.set('n', 'cse', '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })<CR>', opts)
+    vim.keymap.set('n', '<leader>cse', '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })<CR>', opts)
 
     -- function signature help
 	vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts);
