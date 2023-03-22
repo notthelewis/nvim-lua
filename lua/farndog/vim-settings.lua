@@ -4,6 +4,11 @@ vim.o.scrolloff = 8;
 vim.o.updatetime = 300;
 vim.wo.wrap = false;
 
+-- Historic file edits
+vim.o.swapfile = false;
+vim.o.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
+vim.o.undofile = true;
+
 -- Search settings
 vim.o.hlsearch = false;
 vim.o.incsearch = true;
