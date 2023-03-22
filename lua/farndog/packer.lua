@@ -52,4 +52,14 @@ return require('packer').startup(function(use)
     -- Syntax highlighting for cassandra
     use('elubow/cql-vim')
 
+    -- Debug Adapter Protocol
+    use ("mfussenegger/nvim-dap")
+    use ("mxsdev/nvim-dap-vscode-js")
+    use ("rcarriga/nvim-dap-ui")
+
+    use {
+        "microsoft/vscode-js-debug2",
+        opt = true,
+        run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+    }
 end)
