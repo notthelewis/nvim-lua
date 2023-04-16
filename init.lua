@@ -9,4 +9,5 @@ require('farndog.lsp-zero');
 require('farndog.vim-settings');
 require('farndog.null-ls');
 require('farndog.prettier');
-require('farndog.debugger');
+require('farndog.autoclose');
+require('farndog.lualine');
