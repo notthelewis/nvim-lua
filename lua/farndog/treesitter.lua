@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "help", "query", "javascript", "typescript", "rust" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust" },
 
   -- Automatically install missing parsers when entering buffer
   auto_install = true,
@@ -12,10 +12,10 @@ require'nvim-treesitter.configs'.setup {
 -- Sticky headers
 require'treesitter-context'.setup {
     enable = true,
-    max_lines = 0,
+    max_lines = 2,
     min_windows_height = 0,
     line_numbers = true,
-    multiline_threshold = 20,
+    multiline_threshold = 5,
     trim_scope = 'outer',
     mode = 'topline',
     separator = nil,
