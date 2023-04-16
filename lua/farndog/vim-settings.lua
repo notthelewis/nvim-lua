@@ -2,7 +2,7 @@
 vim.o.autoindent = true;
 vim.o.scrolloff = 8;
 vim.o.updatetime = 300;
-vim.o.tabline = 0
+vim.o.showtabline = 0
 vim.wo.wrap = false;
 
 -- Historic file edits
