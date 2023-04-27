@@ -40,8 +40,13 @@ lsp.on_attach(function(client, bufnr)
     -- code show errors
     vim.keymap.set('n', '<leader>cse', '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "single" })<CR>', opts)
 
+    -- Code action
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+
     -- function signature help
 	vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts);
+
+
 
 end);
 
