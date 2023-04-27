@@ -29,3 +29,6 @@ vim.wo.colorcolumn = '120'
 
 
 vim.cmd([[hi ColorColumn guibg=#4F4946]]);
+
+-- TODO: Set this as a proper variable
+vim.cmd([[set noshowmode]]);
