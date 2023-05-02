@@ -4,6 +4,10 @@ vim.o.scrolloff = 8;
 vim.o.updatetime = 300;
 vim.o.showtabline = 0
 vim.wo.wrap = false;
+vim.b.noshowmode = true;
+
+vim.o.shell = "/bin/fish";
+
 
 -- Historic file edits
 vim.o.swapfile = false;
