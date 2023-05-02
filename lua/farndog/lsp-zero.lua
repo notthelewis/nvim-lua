@@ -7,7 +7,8 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'lua_ls',
-	'rust_analyzer'
+	'rust_analyzer',
+    'emmet_ls'
 });
 
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -53,8 +54,39 @@ end);
 
 
 lsp.nvim_workspace()
+lsp.setup();
 
-lsp.setup()
+lsp.setup({
+    ["emmet_ls"] = {
+        filetypes = {
+             "css",
+             "eruby",
+             "html",
+             "javascript",
+             "javascriptreact",
+             "less",
+             "sass",
+             "scss",
+             "svelte",
+             "pug",
+             "typescriptreact",
+             "vue",
+             "hbs"
+         }
+    }
+})
+
+-- lsp.emmet_ls.setup({
+--     filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "hbs" },
+--     init_options = {
+--       html = {
+--         options = {
+--           -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+--           ["bem.enabled"] = true,
+--         },
+--       },
+--     }
+-- })
 
 vim.diagnostic.config({
     virtual_text = true
