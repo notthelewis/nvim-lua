@@ -11,3 +11,5 @@ require('farndog.null-ls');
 require('farndog.prettier');
 require('farndog.autoclose');
 require('farndog.lualine');
+require('farndog.todo');
+require('farndog.colour-highlight')
