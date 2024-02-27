@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
     -- File finder 
     use 'nvim-lua/plenary.nvim'
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use('theprimeagen/harpoon')
@@ -67,4 +67,21 @@ return require('packer').startup(function(use)
     use('brenoprata10/nvim-highlight-colors')
 
     use('aca/emmet-ls')
+
+    -- Oil 
+    use{
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    }
+
+    -- Comment
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
 end)
