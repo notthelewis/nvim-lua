@@ -8,7 +8,6 @@ vim.b.noshowmode = true;
 
 vim.o.shell = "/bin/fish";
 
-
 -- Historic file edits
 vim.o.swapfile = false;
 vim.o.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
