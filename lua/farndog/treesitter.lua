@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust" },
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust", "go" },
 
   -- Automatically install missing parsers when entering buffer
   auto_install = true,
@@ -10,18 +10,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Sticky headers
--- require'treesitter-context'.setup {
---     enable = true,
---     max_lines = 0,
---     min_windows_height = 0,
---     line_numbers = true,
---     multiline_threshold = 20,
---     trim_scope = 'outer',
---     mode = 'topline',
---     separator = nil,
---     zindex = 20
--- }
-
 require'treesitter-context'.setup{
   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
   max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
@@ -35,7 +23,8 @@ require'treesitter-context'.setup{
   separator = nil,
   zindex = 20, -- The Z-index of the context window
 }
---
+
+
 -- Make the sticky headers purrty
 vim.cmd([[hi TreesitterContext guibg=#4F4946]])
 vim.cmd([[hi TreesitterContextLineNumber guifg=#AEF494 guibg=#272727]])
