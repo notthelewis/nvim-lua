@@ -1,5 +1,6 @@
-require('farndog.packer');
-require('farndog.remap');
+vim.g.mapleader = " ";
+
+require('farndog.lazy');
 require('farndog.gruvbox');
 require('farndog.telescope');
 require('farndog.treesitter');
