@@ -1,3 +1,8 @@
+-- Turn on inline diagnostics
+vim.diagnostic.config({
+    virtual_text = true
+})
+
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
