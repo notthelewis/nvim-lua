@@ -75,6 +75,16 @@ require('mason-lspconfig').setup({
             lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
         end,
 
+        gopls = function()
+            lspconfig.gopls.setup({
+                capabilities = capabilities,
+
+                root_dir = function(fname)
+                    return lspconfig.util.root_pattern 'go.work'(fname) or lspconfig.util.root_pattern('go.mod', '.git')(fname)
+                end,
+            })
+        end,
+
         emmet_ls = function()
             lspconfig.emmet_ls.setup({
                 filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "hbs" },
