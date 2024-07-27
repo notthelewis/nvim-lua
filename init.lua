@@ -16,6 +16,7 @@ require('farndog.colour-highlight');
 require('farndog.comment');
 require('farndog.globals');
 
+-- Yoinked from: https://github.com/golang/tools/blob/master/gopls/doc/vim.md#imports-and-formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
