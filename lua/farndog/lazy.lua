@@ -15,6 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugins
 require("lazy").setup({
+
+    -- Custom plugin
+    {
+        -- dev = true,
+        dir = '/home/lewis/devel/nvim-plugins/tj-tutorial'
+    },
+
     -- Theme
     'ellisonleao/gruvbox.nvim',
 
