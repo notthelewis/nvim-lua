@@ -17,10 +17,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
     -- Custom plugin
-    {
-        -- dev = true,
-        dir = '/home/lewis/devel/nvim-plugins/tj-tutorial'
-    },
+    -- {
+    --     -- dev = true,
+    --     dir = '/home/lewis/devel/nvim-plugins/tj-tutorial'
+    -- },
+
+    -- Copilot
+    'github/copilot.vim',
 
     -- Theme
     'ellisonleao/gruvbox.nvim',
