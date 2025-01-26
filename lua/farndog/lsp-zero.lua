@@ -58,7 +58,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities();
 require('mason').setup({});
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'tsserver',
+        'ts_ls',
         'rust_analyzer',
         'lua_ls',
         'emmet_ls',
@@ -87,7 +87,7 @@ require('mason-lspconfig').setup({
 
         emmet_ls = function()
             lspconfig.emmet_ls.setup({
-                filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "hbs" },
+                filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue", "hbs", "templ" },
                 init_options = {
                     html = {
                         options = {
