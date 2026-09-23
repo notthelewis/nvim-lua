@@ -35,8 +35,10 @@ require("lazy").setup({
     'theprimeagen/harpoon',
 
     -- Treesitter
+    -- playground was dropped: it's deprecated upstream in favour of
+    -- Neovim's built-in :Inspect / :InspectTree / :EditQuery, and it
+    -- relies on APIs the current nvim-treesitter rewrite removed.
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-context',
 
     -- Git integration
