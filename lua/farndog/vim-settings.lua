@@ -6,7 +6,7 @@ vim.o.showtabline = 0
 vim.wo.wrap = false;
 vim.b.noshowmode = true;
 
-vim.o.shell = "/bin/fish";
+vim.o.shell = "/opt/homebrew/bin/fish";
 
 -- Historic file edits
 vim.o.swapfile = false;
@@ -18,6 +18,9 @@ vim.o.hlsearch = false;
 vim.o.incsearch = true;
 vim.o.ignorecase = true;
 vim.o.smartcase = true;
+
+-- Folding: start files fully unfolded (treesitter foldexpr is set per-filetype in treesitter.lua)
+vim.o.foldlevelstart = 99;
 
 -- Tab size
 vim.o.tabstop = 4;

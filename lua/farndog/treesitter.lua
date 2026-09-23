@@ -1,13 +1,36 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust", "go" },
-
-  -- Automatically install missing parsers when entering buffer
-  auto_install = true,
-
-  highlight = {
-    enable = true,
-  },
+-- nvim-treesitter's `main` branch is an incompatible rewrite that dropped
+-- require("nvim-treesitter.configs").setup{}; parsers are now installed
+-- explicitly and highlighting is enabled per-filetype via Neovim's native
+-- vim.treesitter API.
+local parsers = {
+  "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "tsx",
+  "rust", "go", "gotmpl", "python", "html", "css", "bash", "fish",
 }
+
+require('nvim-treesitter').install(parsers)
+
+-- .tmpl / .gotmpl files aren't recognised as a filetype by default.
+vim.filetype.add({
+  extension = {
+    tmpl = "gotmpl",
+    gotmpl = "gotmpl",
+  },
+})
+
+local fold_filetypes = {
+  "c", "lua", "vim", "help", "query", "javascript", "typescript",
+  "typescriptreact", "javascriptreact", "rust", "go", "gotmpl", "python",
+  "html", "css", "bash", "fish",
+}
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = fold_filetypes,
+  callback = function()
+    vim.treesitter.start()
+    vim.wo.foldmethod = "expr"
+    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+  end,
+})
 
 -- Sticky headers
 require'treesitter-context'.setup{

@@ -14,13 +14,16 @@ require('farndog.lualine');
 require('farndog.todo');
 require('farndog.colour-highlight');
 require('farndog.comment');
-require('farndog.globals');
+require('farndog.folding');
+-- require('farndog.globals');
 
 -- Yoinked from: https://github.com/golang/tools/blob/master/gopls/doc/vim.md#imports-and-formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-    local params = vim.lsp.util.make_range_params()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    if #clients == 0 then return end
+    local params = vim.lsp.util.make_range_params(0, clients[1].offset_encoding)
     params.context = {only = {"source.organizeImports"}}
     -- buf_request_sync defaults to a 1000ms timeout. Depending on your
     -- machine and codebase, you may want longer. Add an additional
